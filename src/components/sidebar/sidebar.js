@@ -4,7 +4,7 @@ import { SidebarProfile } from '../sidebar-profile/sidebar-profile'
 import "./sidebar.scss";
 export const Sidebar = () => {
 	return (
-		<section class="sidebar">
+		<section className="sidebar">
 			<SidebarHeader />
 			<SidebarProfile />
 			<SidebarButtonsList />
