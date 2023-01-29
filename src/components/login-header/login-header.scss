@@ -1,0 +1,34 @@
+@import "../../styles/variables.scss";
+
+.login-form {
+
+	&__subtitle {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+		text-align: center;
+		margin-top: 10px;
+		color: #6C6C6C;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 39px;
+		/* identical to box height */
+
+		border-left: 6px solid $purple;
+		// padding-left: 6.5px;
+		color: $purple;
+		text-align: center;
+	}
+
+	&__sign-in {
+		margin-top: 45px;
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 27px;
+		color: $purple;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
