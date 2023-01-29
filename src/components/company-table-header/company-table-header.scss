@@ -1,0 +1,28 @@
+.table-content {
+	&__row {
+		border-top: 1px solid  #CED4DA;
+	}
+	&__header {
+		
+		// display: flex;
+		&__item {
+			position: relative;
+			border-top: 1px solid  #CED4DA;
+			padding-top: 10px;
+			&__text {
+				min-width: 100px;
+				font-style: normal;
+				font-weight: 600;
+				font-size: 13px;
+				height: 26px;
+				color: #495057;
+				text-align: left;
+			}
+			img {
+				position: absolute;
+				right: 3px;
+				top: 13px;
+			}
+		}
+	}
+}
