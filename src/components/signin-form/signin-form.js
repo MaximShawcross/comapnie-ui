@@ -6,12 +6,15 @@ import {
 } from "@mui/material";
 
 import { useFormik } from "formik";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { registerUser, userRegisterReset } from "../../features/auth.slice";
-import { signInvalidationSchema } from "../../features/signin.validation.schema";
+import { userRegisterReset } from "../../features/auth/auth.slice";
+import { registerUser } from '../../features/auth/auth.register';
+import { signUpvalidationSchema } from "../../features/validation.schemas";
 import { TextInput } from "../text-input/text-input";
+
+import "./signin-form.scss";
 
 const theme = createTheme();
 
@@ -31,7 +34,7 @@ export const SignUpForm = () => {
 			phone_number: "",
 			position: ""
 		},
-		validationSchema: signInvalidationSchema,
+		validationSchema: signUpvalidationSchema,
 
 		onSubmit: (values) => {
 			values.email = values.email.toLowerCase();
@@ -39,10 +42,9 @@ export const SignUpForm = () => {
 			dispatch(registerUser(values));
 		}
 	});
-	
+
 	//redirect to login function
-	const checkUserRegister = useCallback(
-		() => {
+	const checkUserRegister = useCallback(() => {
 			if (success) {
 				navigate("/login");
 				dispatch(userRegisterReset);
@@ -50,7 +52,7 @@ export const SignUpForm = () => {
 
 			return;
 		},
-	  [success, dispatch, navigate],
+		[success, dispatch, navigate],
 	);
 
 	useEffect(() => {

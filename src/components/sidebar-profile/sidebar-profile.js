@@ -2,6 +2,7 @@
 import profile from '../../resources/profile/profile.png';
 
 export const SidebarProfile = () => {
+
 	return (
 		<div className="sidebar__profile">
 			<img src= {profile} alt="User" className="sidebar__profile__image"></img>

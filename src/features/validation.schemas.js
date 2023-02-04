@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const signInvalidationSchema = yup.object({
+export const signUpvalidationSchema = yup.object({
 	email: yup.string("")
 		.email("email")
 		.required(""),
@@ -11,4 +11,11 @@ export const signInvalidationSchema = yup.object({
 	phone_number: yup.string("").required(""),
 	possition: yup.mixed("").required("").oneOf(["Junior", "Middle", "Senior"]),
 	description: yup.string().required()
+})
+
+export const signInvalidationSchema = yup.object({
+	email: yup.string()
+		.email()
+		.required(),
+	password: yup.string().required()
 })
