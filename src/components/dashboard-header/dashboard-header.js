@@ -2,16 +2,8 @@ import squareIcon from '../../resources/icons/square-caret-left-solid.svg';
 import bellIcon from '../../resources/icons/bell-regular.svg';
 
 import "./dashboard-header.scss";
-import { useEffect } from 'react';
-import axios from 'axios';
 
 export const DashboardHeader = () => {
-	useEffect(() => {
-		axios.get("http://127.0.0.1:5000/users/log");
-		return () => {
-		}
-	}, [])
-
 
 	return (
 		<header className="header">

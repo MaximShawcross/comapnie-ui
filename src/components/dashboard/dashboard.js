@@ -3,10 +3,19 @@ import userIcon from "../../resources/icons/user-regular.svg";
 import companieIcon from '../../resources/icons/building-regular.svg';
 
 import "./dashboard.scss";
-import { useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const Dashboard = () => {
-
+	const userInfo = useSelector((state) => state.userInfo);
+	const navigate = useNavigate();
+	
+	// useEffect(() => {
+	// 	if (!userInfo) {
+	// 		navigate("/login");
+	// 	}
+	// }, [userInfo, navigate]);
 
 	return (
 		<div className="dashboard">

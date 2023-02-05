@@ -13,7 +13,7 @@ const theme = createTheme();
 
 
 export const LoginForm = () => {
-	const { userLoginSuccess } = useSelector((state) => state.auth)
+	const { userToken } = useSelector((state) => state.auth)
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -30,14 +30,14 @@ export const LoginForm = () => {
 		}
 	});
 
-	//check for user loggedin
+	// check for user loggedin
 	const checkUserLoggedIn = useCallback(() => {
-		if (userLoginSuccess) {
+		if ( userToken && userToken !== "undefined") {
 			navigate("/");
 		};
 		
-		return;
-	}, [userLoginSuccess, navigate])
+		// return;
+	}, [userToken, navigate])
 
 	useEffect(() => {
 		checkUserLoggedIn();

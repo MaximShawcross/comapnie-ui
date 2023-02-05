@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { registerUser } from './auth.register';
 import { loginUser } from './auth.login';
+
 export const apiUrl = 'http://127.0.0.1:5000';
 
-const userToken = localStorage.getItem('userToken')
-	? localStorage.getItem('userToken')
-	: null;
+const userToken = localStorage.getItem('access_token') ? 
+	localStorage.getItem('access_token') : null;
 
 const initialState = {
 	loading: false,
-	userLoginSuccess: false,
+	userInfo: null,
 	userToken,
 	error: null,
 	success: false,
@@ -21,6 +21,9 @@ const authSlice = createSlice({
 	reducers: {
 		userRegisterReset: (state) => {
 			state.success = false;
+		},
+		setCredentials: (state, { payload }) => {
+			state.userInfo = payload;
 		}
 	},
 	extraReducers: (builder) => {
@@ -50,13 +53,13 @@ const authSlice = createSlice({
 		}) 
 		.addCase(loginUser.fulfilled, (state, {payload}) => {
 			state.loading = false;
+			state.userInfo = payload;
 			state.userToken = payload.access_token;
-			state.userLoginSuccess = true;
 		})
 
 		.addDefaultCase((state, action) => {})
 	}		
 });
 
-export const { userRegisterReset } = authSlice.actions;
+export const { userRegisterReset, setCredentials } = authSlice.actions;
 export default authSlice.reducer;
