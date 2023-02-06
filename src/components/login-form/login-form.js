@@ -25,7 +25,6 @@ export const LoginForm = () => {
 		},
 		validationSchema: signInvalidationSchema,
 		onSubmit: (values) => {
-			// console.log(res);
 			dispatch(loginUser(values));
 		}
 	});

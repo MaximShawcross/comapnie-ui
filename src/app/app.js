@@ -1,59 +1,33 @@
-import { HomePage, LoginPage, CompaniesPage, SignInPage } from '../pages/index';
+import { HomePage, LoginPage, CompaniesPage, SignInPage, CompanyEditPage } from '../pages/index';
 import { createBrowserRouter, redirect } from 'react-router-dom';
 import "./app.scss";
-import { useSelector } from 'react-redux';
-import { store } from './store';
-
+import { checkUserLoggedIn } from "../features/check.user.logged-in"
+import { store } from "../app/store"
 export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <HomePage />,
-		loader: async () => {
-			const userInfo = store.getState().auth.userInfo;
-			
-			if (!userInfo) {
-				throw redirect("/login")
-			}
-			return null;
-		}
+		loader: checkUserLoggedIn
 	},
 	{
 		path: "/login",
 		element: <LoginPage />,
-		// loader: async () => {
-		// 	const userInfo = store.getState().auth.userInfo;
-			
-		// 	if (userInfo) {
-		// 		throw redirect("/")
-		// 	}
-		// 	return null;
-		// }
 	},
 	{
 		path: "/companies",
 		element: <CompaniesPage />,
-		loader: async () => {
-			const userInfo = store.getState().auth.userInfo;
-			
-			if (!userInfo) {
-				throw redirect("/login")
-			}
-			return null;
-		}
+		loader: checkUserLoggedIn
 		
 	},
 	{
 		path: "/register",
 		element: <SignInPage />,
-		// loader: async () => {
-		// 	const userInfo = store.getState().auth.userInfo;
-			
-		// 	if (userInfo) {
-		// 		throw redirect("/")
-		// 	}
-		// 	return null;
-		// }
 	},
+	{
+		path: "/companies/edit/:id",
+		element: <CompanyEditPage />,
+		loader: checkUserLoggedIn
+	}
 ]);
 
 

@@ -1,18 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+const companyAdapter = createEntityAdapter();
+
+
+const initialState = companyAdapter.getInitialState({
 	companies: null
-}
+});
 
 export const companySlice = createSlice({
 	name: "company",
 	initialState,
 	reducers: {
 		setComapnyList: (state, { payload }) => {
-			state.companies = payload;
-		}
+			companyAdapter.setAll(state, payload);
+		},
+		updateSingleCompany: companyAdapter.upsertOne
 	}
 });
 
-export const { setComapnyList } = companySlice.actions
+export const { setComapnyList, updateSingleCompany } = companySlice.actions;
+export const { selectById, selectIds } = companyAdapter.getSelectors(state => state.company)
+
 export default companySlice.reducer;

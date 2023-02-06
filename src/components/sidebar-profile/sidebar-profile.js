@@ -14,8 +14,6 @@ export const SidebarProfile = () => {
 		pollingInterval: 90000
 	});
 
-	console.log(data);
-
 	useEffect(() => {
 		if (data) {
 			dispatch(setCredentials(data))

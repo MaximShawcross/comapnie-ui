@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 
 
 export const TextInput = ({name, label, onChange, ...props}) => {
-	const { margin } = props;
+	const { margin, value } = props;
 	
 	return (
 		<TextField
@@ -14,6 +14,7 @@ export const TextInput = ({name, label, onChange, ...props}) => {
 			onChange= {onChange}
 			size="small"
 			margin= {margin}
+			value = {value}
 		/>
 	);
 };

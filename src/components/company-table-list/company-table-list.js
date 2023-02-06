@@ -1,30 +1,38 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetCompaniesQuery } from "../../features/company-api.service";
 import { CompanieTableItem } from "../company-table-item/company-table-item";
 import { Spinner } from "../spinner/spinner";
+import { selectIds, setComapnyList } from "../../features/company/company.slice"
+import { Link } from "react-router-dom";
+
 
 export const CompanyTableList = () => {
 	const dispatch = useDispatch();
+	const companies = useSelector(state => selectIds(state));
 
-	const {data, isFetching} = useGetCompaniesQuery("copmanies", {
+	const {data, isFetching, refetch} = useGetCompaniesQuery("copmanies", {
 		pollingInterval: 90000
 	});
+	
+	useEffect(() => {
+		if (data) {
+			dispatch(setComapnyList(data));
+		}
+
+		// refetch();
+	}, [data, dispatch]);
 
 	const renderItems = () => {
-		return data.map((item) => {
-			return <CompanieTableItem 
-			key = {nanoid()} name = {item.name}
-			adress = {item.adress} serviceOfActivity = {item.serviceOfActivity}
-			numberOfEmployees = {item.numberOfEmployees} description = {item.description}
-			type = {item.type} 
-		/>
-		})		
+		return companies.map((id) => (
+			<CompanieTableItem key = {nanoid()} id = {id}/>
+		));
 	}
 
 	const elements = isFetching ? <Spinner /> : renderItems();
 
-	console.log(data);
+	// console.log(data);
 
 	return (
 		<>
