@@ -21,8 +21,14 @@ export const companyApi = createApi({
 				method: 'GET'
 			}),
 		}),
+		getCompanies: builder.query({
+			query: () => ({
+				url: "companies",
+				method: "GET"
+			})
+		})
 	}),
 	
 })
 
-export const { useGetUserQuery } = companyApi;
+export const { useGetUserQuery, useGetCompaniesQuery } = companyApi;

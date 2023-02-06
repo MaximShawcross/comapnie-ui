@@ -1,7 +1,7 @@
 // import "./sidebar-profile.scss";
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useGetUserQuery } from '../../features/auth/auth.service';
+import { useGetUserQuery } from '../../features/company-api.service';
 import { setCredentials } from '../../features/auth/auth.slice';
 
 import profile from '../../resources/profile/profile.png';

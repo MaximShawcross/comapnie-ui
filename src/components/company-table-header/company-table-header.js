@@ -8,19 +8,19 @@ export const CompanyTableHeader = () => {
 					<div className="table-content__header__item__text">Name</div>
 				</th>
 				<th className="table-content__header__item">
-					<div className="table-content__header__item__text">Payment Schedule</div>
+					<div className="table-content__header__item__text">Address</div>
 				</th>
 				<th className="table-content__header__item">
-					<div className="table-content__header__item__text">Bill Number</div>
+					<div className="table-content__header__item__text">Service of activity</div>
 				</th>
 				<th className="table-content__header__item">
-					<div className="table-content__header__item__text">Amount Paid</div>
+					<div className="table-content__header__item__text">Number of employees</div>
 				</th> 
 				<th className="table-content__header__item">
-					<div className="table-content__header__item__text">Balance amount</div>
+					<div className="table-content__header__item__text">Description</div>
 				</th>
 				<th className="table-content__header__item">
-					<div className="table-content__header__item__text">Date</div>
+					<div className="table-content__header__item__text">Type</div>
 				</th>
 				<th className="table-content__header__item"></th>
 				<th className="table-content__header__item"></th>
