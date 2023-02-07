@@ -1,10 +1,10 @@
-import "./company-table-item.scss";
-import vectorIcon from '../../resources/icons/Vector.png';
-import pencilIcon from "../../resources/icons/pen.png";
-import { Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectById } from "../../features/company/company.slice";
+
+import vectorIcon from '../../resources/icons/Vector.png';
+import pencilIcon from "../../resources/icons/pen.png";
+import "./company-table-item.scss";
 
 export const CompanieTableItem = ({id}) => {
 	const copanyId = useSelector(state => selectById(state, id));

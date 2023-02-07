@@ -2,7 +2,6 @@ import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
 const companyAdapter = createEntityAdapter();
 
-
 const initialState = companyAdapter.getInitialState({
 	companies: null
 });

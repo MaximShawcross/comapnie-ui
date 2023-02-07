@@ -1,0 +1,40 @@
+.table-content {
+	&__row {
+		border-top: 1px solid #CED4DA;
+	}
+
+	&__body {
+		&__item {
+			height: 56px;
+			min-width: 50px;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 13px;
+			line-height: 20px;
+			color: #495057;
+			border-top: 1px solid #CED4DA;
+
+			&__img {
+				display: block;
+				margin: 0 auto;
+
+			}
+
+			&__button {
+				border: none;
+				background-color: inherit;
+				cursor: pointer;
+
+				&__icon {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					&__pencil {
+						height: 15px;
+						width: 15px;
+					}
+				}
+			}
+		}
+	}
+}
