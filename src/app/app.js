@@ -37,6 +37,10 @@ export const router = createBrowserRouter([
 		path: "/companies/view/:id",
 		element: <SingleCompanyPage/>,
 		loader: checkUserLoggedIn
+	},
+	{
+		path: "/users",
+		element: ""
 	}
 ]);
 

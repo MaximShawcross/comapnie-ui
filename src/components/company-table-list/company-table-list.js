@@ -3,9 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetCompaniesQuery } from "../../features/company-api.service";
 import { CompanieTableItem } from "../company-table-item/company-table-item";
-import { Spinner } from "../spinner/spinner";
 import { selectIds, setComapnyList } from "../../features/company/company.slice"
-import { Link } from "react-router-dom";
 
 
 export const CompanyTableList = () => {
@@ -30,7 +28,7 @@ export const CompanyTableList = () => {
 		));
 	}
 
-	const elements = isFetching ? <Spinner /> : renderItems();
+	const elements = isFetching ? null: renderItems();
 
 	// console.log(data);
 
