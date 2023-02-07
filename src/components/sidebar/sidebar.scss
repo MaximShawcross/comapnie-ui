@@ -74,6 +74,10 @@
 			&__title {
 				text-align: center;
 			}
+
+			&_logut {
+				margin-top: 50px;
+			}
 		}
 
 		:first-child {
@@ -85,8 +89,6 @@
 			border-radius: 4px;
 		}
 
-		:nth-child(4n) {
-			margin-top: 50px;
-		}
+		
 	}
 }
