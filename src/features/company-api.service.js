@@ -33,27 +33,16 @@ export const companyApi = createApi({
 				method: 'PATCH',
 				body: company
 			}),
-			transformResponse: (response, meta, arg) => response.data,
-			transformErrorResponse: (response, meta, arg) => response.status,
-			async onQueryStarted(
-				arg,
-				{ dispatch, getState, queryFulfilled, requestId, extra, getCacheEntry }
-			) { },
-			async onCacheEntryAdded(
-				arg,
-				{
-					dispatch,
-					getState,
-					extra,
-					requestId,
-					cacheEntryRemoved,
-					cacheDataLoaded,
-					getCacheEntry,
-				}
-			) { },
+		}),
+		createCompany: builder.mutation({
+			query: ({...company}) => ({
+				url: `companies/create`,
+				method: "POST",
+				body: company
+			})
 		})
 	}),
 
 })
 
-export const { useGetUserQuery, useGetCompaniesQuery, useUpdateCompanyMutation } = companyApi;
+export const { useGetUserQuery, useGetCompaniesQuery, useUpdateCompanyMutation, useCreateCompanyMutation } = companyApi;

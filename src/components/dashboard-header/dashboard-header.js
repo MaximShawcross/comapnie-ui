@@ -2,6 +2,8 @@ import squareIcon from '../../resources/icons/square-caret-left-solid.svg';
 import bellIcon from '../../resources/icons/bell-regular.svg';
 
 import "./dashboard-header.scss";
+import { Link } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 export const DashboardHeader = () => {
 
@@ -13,7 +15,7 @@ export const DashboardHeader = () => {
 				</div>
 				<div className="header__container__item">
 					<input className="header__container__item__input" placeholder="Search..." type="text"></input>
-					<img src={bellIcon} alt="bell" className="header__container__item__icon"></img>
+						<img src={bellIcon} alt="bell" className="header__container__item__icon"></img>
 				</div>
 			</div>
 		</header>

@@ -2,37 +2,29 @@ import { ThemeProvider } from '@emotion/react';
 import { Button, createTheme, CssBaseline, Grid, Typography, Box, Container } from '@mui/material';
 import { useFormik } from 'formik';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { useUpdateCompanyMutation } from '../../features/company-api.service';
-import { selectById, updateSingleCompany } from '../../features/company/company.slice';
+import { useDispatch } from 'react-redux';
+import { useCreateCompanyMutation } from '../../features/company-api.service';
 import { TextInput } from '../text-input/text-input';
-import "./company-edit-form.scss";
+import "./company-create-form.scss";
 
 const theme = createTheme();
 
-export const CompanyEditForm = () => {
-	const { id } = useParams();
+export const CompanyCreateForm = () => {
 	const dispatch = useDispatch();
 
-	const company  = useSelector(state => selectById(state, id));
-
-	const [
-		updateCompany,
-		{isLoading, isSuccess}
-	] = useUpdateCompanyMutation();
+	const [createCompany, {isSuccess, isError}]= useCreateCompanyMutation();
 
 	const formik = useFormik({
 		initialValues: {
-			name: company.name,
-			adress: company.adress,
-			serviceOfActivity: company.serviceOfActivity,
-			numberOfEmployees: company.numberOfEmployees,
-			description: company.description,
-			type: company.type
+			name: "",
+			adress: "",
+			serviceOfActivity: "",
+			numberOfEmployees: "",
+			description: "",
+			type: ""
 		},
-		onSubmit: async (companyParam) => {
-			updateCompany({ id, ...companyParam });
+		onSubmit: (companyParam) => {
+			createCompany({...companyParam});
 		}
 	})
 

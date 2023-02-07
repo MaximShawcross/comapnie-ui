@@ -14,7 +14,7 @@ export const companySlice = createSlice({
 		setComapnyList: (state, { payload }) => {
 			companyAdapter.setAll(state, payload);
 		},
-		updateSingleCompany: companyAdapter.upsertOne
+
 	}
 });
 

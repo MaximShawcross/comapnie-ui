@@ -21,8 +21,8 @@ export const CompanyTableList = () => {
 			dispatch(setComapnyList(data));
 		}
 
-		// refetch();
-	}, [data, dispatch]);
+		refetch();
+	}, [data, dispatch, refetch]);
 
 	const renderItems = () => {
 		return companies.map((id) => (
