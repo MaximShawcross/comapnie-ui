@@ -5,7 +5,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useUpdateCompanyMutation } from '../../features/company-api.service';
-import { selectById, updateSingleCompany } from '../../features/company/company.slice';
+import { selectById } from '../../features/company/company.slice';
 import { TextInput } from '../text-input/text-input';
 import "./company-edit-form.scss";
 

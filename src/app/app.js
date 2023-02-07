@@ -1,9 +1,8 @@
 import { HomePage, LoginPage, CompaniesPage, SignInPage, CompanyEditPage, CompanyCreatePage } from '../pages/index';
-import { createBrowserRouter, redirect } from 'react-router-dom';
-import "./app.scss";
+import { createBrowserRouter } from 'react-router-dom';
 import { checkUserLoggedIn } from "../features/check.user.logged-in"
-import { store } from "../app/store"
-import { CompanyCreateForm } from '../components/company-create-form/company-create-form';
+import { SingleCompanyPage } from '../pages/single.comapny.page';
+
 export const router = createBrowserRouter([
 	{
 		path: "/",
@@ -32,6 +31,11 @@ export const router = createBrowserRouter([
 	{
 		path: "/companies/create",
 		element: <CompanyCreatePage />,
+		loader: checkUserLoggedIn
+	},
+	{
+		path: "/companies/view/:id",
+		element: <SingleCompanyPage/>,
 		loader: checkUserLoggedIn
 	}
 ]);

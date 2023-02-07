@@ -31,9 +31,9 @@ export const CompanieTableItem = ({id}) => {
 				{/* </button> */}
 			</td>
 			<td className="table-content__body__item">
-				<button className="table-content__body__item__button">
-					<img className = "table-content__body__item__button__icon"src= {vectorIcon} alt="Vector"></img>
-				</button>
+				<NavLink to = {`/companies/view/${id}`} >
+						<img className = "table-content__body__item__button__icon"src= {vectorIcon} alt="Vector"></img>
+				</NavLink>
 			</td>
 		</tr>
 	)

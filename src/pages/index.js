@@ -4,4 +4,6 @@ import { CompaniesPage } from './companies.page';
 import { SignInPage } from './signin.page';
 import { CompanyEditPage } from "./company.edit.page";
 import { CompanyCreatePage } from "./company.create.page"
-export { CompanyCreatePage, HomePage, LoginPage, CompaniesPage, SignInPage, CompanyEditPage }
+import { SingleCompanyPage } from './single.comapny.page';
+
+export { CompanyCreatePage, HomePage, LoginPage, CompaniesPage, SignInPage, CompanyEditPage, SingleCompanyPage }
