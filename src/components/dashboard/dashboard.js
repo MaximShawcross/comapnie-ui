@@ -6,13 +6,13 @@ import "./dashboard.scss";
 import { NavLink} from "react-router-dom";
 
 export const Dashboard = () => {
+	
 
 	return (
 		<div className="dashboard">
 			<NavLink to="/companies"
 			style={({isActive, isPending}) => {
 				return {
-					background: isActive ? "#A700D0": "inherit",
 					borderRadius: "4px",
 					textDecoration: 'none'
 				};
@@ -20,7 +20,6 @@ export const Dashboard = () => {
 			>
 				<DashboardItem name = "Company" number = {12} image = {companieIcon}/>
 			</NavLink>
-			<DashboardItem name = "Users" number = {5} image = {userIcon}/>
 		</div>
 	)
 }

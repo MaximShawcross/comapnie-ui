@@ -3,7 +3,7 @@ import { Button, createTheme, CssBaseline, Grid, Typography, Box, Container } fr
 import { useFormik } from 'formik';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useUpdateUserMutation } from '../../features/company-api.service';
 import { selectById } from '../../features/users/users.slice';
 import { TextInput } from '../text-input/text-input';
@@ -14,6 +14,7 @@ const theme = createTheme();
 export const UsersEditForm = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const user = useSelector(state => selectById(state, id));
 
@@ -35,6 +36,10 @@ export const UsersEditForm = () => {
 		},
 		onSubmit: async (userParams) => {
 			updateUser({ id, ...userParams });
+
+			if ( userParams ) {
+				return navigate("/users");
+			}
 		}
 	})
 
@@ -44,13 +49,13 @@ export const UsersEditForm = () => {
 				<CssBaseline />
 				<Box
 					sx={{
-						marginTop: 4,
+						marginTop: 1,
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'center',
 					}}
 				>
-					<Typography sx={{ mb: 1, mt: 12 }} component="h1" variant="h5">
+					<Typography sx={{ mb: 1, mt: 5 }} component="h1" variant="h5">
 						Edit User
 					</Typography>
 					<Box component="form" onSubmit={formik.handleSubmit} noValidate 

@@ -65,7 +65,13 @@ export const SidebarButtonsList = () => {
 			{elements}
 
 
-			<button className="sidebar__nav__item sidebar__nav__item_logout">
+			<button className="sidebar__nav__item sidebar__nav__item_logout"
+				onClick={() => {
+					localStorage.clear();
+					// eslint-disable-next-line no-restricted-globals
+					location.reload();
+				}}			
+			>
 				<img src={logoutIcon} alt="logout" className="sidebar__nav__item__icon"></img>
 				<div className="sidebar__nav__item__title">Logout</div>
 			</button>

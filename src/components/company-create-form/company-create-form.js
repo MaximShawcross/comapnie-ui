@@ -3,6 +3,7 @@ import { Button, createTheme, CssBaseline, Grid, Typography, Box, Container } fr
 import { useFormik } from 'formik';
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useCreateCompanyMutation } from '../../features/company-api.service';
 import { TextInput } from '../text-input/text-input';
 import "./company-create-form.scss";
@@ -11,6 +12,7 @@ const theme = createTheme();
 
 export const CompanyCreateForm = () => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const [createCompany, {isSuccess, isError}]= useCreateCompanyMutation();
 
@@ -25,6 +27,10 @@ export const CompanyCreateForm = () => {
 		},
 		onSubmit: (companyParam) => {
 			createCompany({...companyParam});
+
+			if ( companyParam ) {
+				return navigate("/companies");
+			}
 		}
 	})
 

@@ -11,6 +11,6 @@ export const UsersEditPage = () => {
 			<div className='form'> 
 				<UsersEditForm />
 			</div>		
-		</div>
+		 </div>
 	)
 } 

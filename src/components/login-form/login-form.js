@@ -1,12 +1,13 @@
 import { ThemeProvider } from "@emotion/react";
 import { Avatar, Box, Button, Container, createTheme, CssBaseline, Grid, Typography } from "@mui/material";
-import { useFormik } from "formik";
+import { Formik, useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signInvalidationSchema } from "../../features/validation.schemas";
 import { TextInput } from "../text-input/text-input";
 import { loginUser } from '../../features/auth/auth.login';
 import { useCallback, useEffect } from "react";
+import { LoginTextInput } from "../login-text-input/login-text-input";
 // import "./login-form.scss";
 
 const theme = createTheme();
@@ -59,12 +60,33 @@ export const LoginForm = () => {
 					<Typography sx = {{ mb: 1}} component="h1" variant="h5">
 						Sign in
 					</Typography>
-					<Box component="form" onSubmit={formik.handleSubmit} noValidate sx={{ mt: 1 }}>
+					<Box component="form" onSubmit={formik.handleSubmit} sx={{ mt: 1 }}>
 						<Grid item xs={12}>
-							<TextInput name="email" label="Email" onChange={formik.handleChange} margin = "normal" />
+							<LoginTextInput  
+								name="email" id = "email" 
+								label="Email" 
+								onChange={formik.handleChange} 
+								margin = "normal" 
+								onBlur={formik.handleBlur}
+								value={formik.values.email}
+								error={formik.touched.email && Boolean(formik.errors.email)}
+								helperText={formik.touched.email && formik.errors.email} 
+								size = "small"      							
+							/>
 						</Grid>
 						<Grid item xs={12}>
-							<TextInput name="password" label="Password" onChange={formik.handleChange} margin = "normal" />
+							<LoginTextInput  
+								name="password"
+							 	id = "password" 
+								label="password" 
+								onChange={formik.handleChange} 
+								margin = "normal" 
+								onBlur={formik.handleBlur}
+								value={formik.values.password}
+								error={formik.touched.password && Boolean(formik.errors.password)}
+								helperText={formik.touched.password && formik.errors.password}     
+								size = "small"        							
+							/>
 						</Grid>
 						<Grid item xs={12}>
 							<Button
@@ -78,18 +100,7 @@ export const LoginForm = () => {
 						</Grid>
 					</Box>
 				</Box>
-				{/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
 			</Container>
 		</ThemeProvider>
 	)
 }
-
-{/* <form className="form" action="">
-	<p className="form__fild-name">Email</p>
-	<input placeholder="Enter your email" className="form__input" type="text"></input>
-
-	<p className="form__fild-name">Password</p>
-	<input placeholder="Enter your password" className="form__input" type="text"></input>
-
-	<button className="form__button" type="submit">SIGN IN</button>
-</form> */}

@@ -3,7 +3,7 @@ import { Button, createTheme, CssBaseline, Grid, Typography, Box, Container } fr
 import { useFormik } from 'formik';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { redirect, useNavigate, useParams } from 'react-router-dom';
 import { useUpdateCompanyMutation } from '../../features/company-api.service';
 import { selectById } from '../../features/company/company.slice';
 import { TextInput } from '../text-input/text-input';
@@ -14,6 +14,7 @@ const theme = createTheme();
 export const CompanyEditForm = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const company  = useSelector(state => selectById(state, id));
 
@@ -33,6 +34,10 @@ export const CompanyEditForm = () => {
 		},
 		onSubmit: async (companyParam) => {
 			updateCompany({ id, ...companyParam });
+
+			if ( companyParam ) {
+				return navigate("/companies");
+			}
 		}
 	})
 

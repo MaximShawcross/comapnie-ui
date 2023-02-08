@@ -41,6 +41,8 @@ export const companyApi = createApi({
 				body: company
 			})
 		}),
+		
+		// users features
 		getUsersList: builder.query({
 			query: () => ({
 				url: "users/find",
@@ -53,7 +55,7 @@ export const companyApi = createApi({
 				method: 'PATCH',
 				body: user
 			}),
-		}),
+		})
 	}),
 
 })

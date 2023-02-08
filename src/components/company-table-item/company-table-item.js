@@ -25,13 +25,13 @@ export const CompanieTableItem = ({id}) => {
 			<td className="table-content__body__item">{type}</td>
 			<td className="table-content__body__item">
 				{/* <button className="table-content__body__item__button"> */}
-					<NavLink to = {`/companies/edit/${id}`} >
+					<NavLink to = {`/companies/edit/${id}`} style = {{display: "flex", justifyContent: "center", alignItems: "center"}}>
 						<img className="table-content__body__item__button__icon__pencil" src= {pencilIcon} alt="pencil"></img>
 					</NavLink>
 				{/* </button> */}
 			</td>
 			<td className="table-content__body__item">
-				<NavLink to = {`/companies/view/${id}`} >
+				<NavLink to = {`/companies/view/${id}`} style = {{width: "15px", height: "15px"}} >
 						<img className = "table-content__body__item__button__icon"src= {vectorIcon} alt="Vector"></img>
 				</NavLink>
 			</td>
