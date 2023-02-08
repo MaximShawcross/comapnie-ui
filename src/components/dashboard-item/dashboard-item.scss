@@ -1,9 +1,11 @@
+@import "../../styles/variables.scss";
+
 .dashboard__item {
 	width: 255px;
 	height: 157px;
 	padding: 20px 20px;
 	margin-right: 30px;
-	background-color: #7A86F5;
+	background-color: $purple;
 	border: 1px solid #000000;
 	border-radius: 8px;
 	cursor: pointer;

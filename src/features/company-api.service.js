@@ -40,9 +40,28 @@ export const companyApi = createApi({
 				method: "POST",
 				body: company
 			})
+		}),
+		
+		// users features
+		getUsersList: builder.query({
+			query: () => ({
+				url: "users/find",
+				method: "GET"
+			})
+		}),
+		updateUser: builder.mutation({
+			query: ({ id, ...user }) => ({
+				url: `users/admin/edit-user/${id}`,
+				method: 'PATCH',
+				body: user
+			}),
 		})
 	}),
 
 })
 
-export const { useGetUserQuery, useGetCompaniesQuery, useUpdateCompanyMutation, useCreateCompanyMutation } = companyApi;
+export const { 
+	useGetUserQuery, useGetCompaniesQuery, 
+	useUpdateCompanyMutation, useCreateCompanyMutation, 
+	useGetUsersListQuery, useUpdateUserMutation 
+} = companyApi;

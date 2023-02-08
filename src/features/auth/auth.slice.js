@@ -4,8 +4,8 @@ import { loginUser } from './auth.login';
 
 export const apiUrl = 'http://127.0.0.1:5000';
 
-const userToken = localStorage.getItem('access_token') ? 
-	localStorage.getItem('access_token') : null;
+export const userToken = localStorage.getItem('userToken') ? 
+	localStorage.getItem('userToken') : null;
 
 const initialState = {
 	loading: false,
@@ -24,7 +24,11 @@ const authSlice = createSlice({
 		},
 		setCredentials: (state, { payload }) => {
 			state.userInfo = payload;
+		},
+		logout: (state) => {
+			state.userToken = null;
 		}
+
 	},
 	extraReducers: (builder) => {
 		builder
@@ -57,9 +61,9 @@ const authSlice = createSlice({
 			state.userToken = payload.access_token;
 		})
 
-		.addDefaultCase((state, action) => {})
+		.addDefaultCase((state, action) => {		})
 	}		
 });
 
-export const { userRegisterReset, setCredentials } = authSlice.actions;
+export const { userRegisterReset, setCredentials, logout } = authSlice.actions;
 export default authSlice.reducer;
