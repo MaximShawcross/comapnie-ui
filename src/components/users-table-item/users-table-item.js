@@ -27,7 +27,7 @@ export const UsersTableItem = ({ id }) => {
 			<td className="table-content__body__item">{position}</td>
 			<td className="table-content__body__item">{description}</td>
 			<td className="table-content__body__item">
-				<NavLink to = {`/companies/edit/${id}`} >
+				<NavLink to = {`/users/edit/${id}`} >
 					<img className="table-content__body__item__button__icon__pencil" src= {pencilIcon} alt="pencil"></img>
 				</NavLink>
 			</td>

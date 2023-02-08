@@ -1,4 +1,4 @@
-import { HomePage, LoginPage, CompaniesPage, SignInPage, CompanyEditPage, CompanyCreatePage, UsersPage } from '../pages/index';
+import { HomePage, LoginPage, CompaniesPage, SignInPage, CompanyEditPage, CompanyCreatePage, UsersPage, UsersEditPage } from '../pages/index';
 import { createBrowserRouter } from 'react-router-dom';
 import { checkUserLoggedIn } from "../features/check.user.logged-in"
 import { SingleCompanyPage } from '../pages/single.comapny.page';
@@ -41,6 +41,10 @@ export const router = createBrowserRouter([
 	{
 		path: "/users",
 		element: <UsersPage/>
+	},
+	{
+		path: "/users/edit/:id",
+		element: <UsersEditPage />
 	}
 ]);
 

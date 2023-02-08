@@ -4,35 +4,37 @@ import { useFormik } from 'formik';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { useUpdateCompanyMutation } from '../../features/company-api.service';
-import { selectById } from '../../features/company/company.slice';
+import { useUpdateUserMutation } from '../../features/company-api.service';
+import { selectById } from '../../features/users/users.slice';
 import { TextInput } from '../text-input/text-input';
-import "./company-edit-form.scss";
+import "./users-edit-form.scss";
 
 const theme = createTheme();
 
-export const CompanyEditForm = () => {
+export const UsersEditForm = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();
 
-	const company  = useSelector(state => selectById(state, id));
+	const user = useSelector(state => selectById(state, id));
 
 	const [
-		updateCompany,
+		updateUser,
 		{isLoading, isSuccess}
-	] = useUpdateCompanyMutation();
+	] = useUpdateUserMutation();
 
 	const formik = useFormik({
 		initialValues: {
-			name: company.name,
-			adress: company.adress,
-			serviceOfActivity: company.serviceOfActivity,
-			numberOfEmployees: company.numberOfEmployees,
-			description: company.description,
-			type: company.type
+			email: user.email,
+			password: user.password,
+			first_name: user.first_name,
+			last_name: user.last_name,
+			nick_name: user.nick_name,
+			phone_number: user.phone_number,
+			position: user.position,
+			description: user.description
 		},
-		onSubmit: async (companyParam) => {
-			updateCompany({ id, ...companyParam });
+		onSubmit: async (userParams) => {
+			updateUser({ id, ...userParams });
 		}
 	})
 
@@ -49,28 +51,32 @@ export const CompanyEditForm = () => {
 					}}
 				>
 					<Typography sx={{ mb: 1, mt: 12 }} component="h1" variant="h5">
-						Edit Company
+						Edit User
 					</Typography>
 					<Box component="form" onSubmit={formik.handleSubmit} noValidate 
 						sx={{ mt: 1, width: 600 }}
 					>
 						<Grid container spacing={2}>
 							<Grid item xs={12}>
-								<TextInput name="name" label="name" onChange={formik.handleChange} margin="dense" />
+								<TextInput name="email" label="email" onChange={formik.handleChange} margin="dense" />
 							</Grid>
 							<Grid item xs={12}>
-								<TextInput name="adress" label="adress" onChange={formik.handleChange} margin="dense"/>
+								<TextInput name="password" label="adress" onChange={formik.handleChange} margin="dense"/>
 							</Grid>
 							<Grid item xs={12} sm={6}>
-								<TextInput name="numberOfEmployees" label="numberOfEmployees" onChange={formik.handleChange} margin="dense"/>
+								<TextInput name="first_name" label="first_name" onChange={formik.handleChange} margin="dense"/>
 							</Grid>
 							<Grid item xs={12} sm={6}>
-								<TextInput name="type" label="type" onChange={formik.handleChange} margin="dense"/>
-
+								<TextInput name="last_name" label="last_name" onChange={formik.handleChange} margin="dense"/>
 							</Grid>
-
 							<Grid item xs={12}>
-								<TextInput name="serviceOfActivity" label="serviceOfActivity" onChange={formik.handleChange} margin="dense"/>
+								<TextInput name="nick_name" label="nick_name" onChange={formik.handleChange} margin="dense"/>
+							</Grid>
+							<Grid item xs={12}>
+								<TextInput name="phone_number" label="phone_number" onChange={formik.handleChange} margin="dense" />
+							</Grid>
+							<Grid item xs={12}>
+								<TextInput name="position" label="position" onChange={formik.handleChange} margin="dense" />
 							</Grid>
 							<Grid item xs={12}>
 								<TextInput name="description" label="description" onChange={formik.handleChange} margin="dense" />
