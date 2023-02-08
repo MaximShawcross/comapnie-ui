@@ -55,6 +55,21 @@ export const companyApi = createApi({
 				method: 'PATCH',
 				body: user
 			}),
+		}),
+
+		// admin feature
+		getEveryCompanies: builder.query({
+			query: () => ({
+				url: "companies/admin",
+				method: "GET"
+			})
+		}),
+		updateAdminCompany: builder.mutation({
+			query: ({id, ...company}) => ({
+				url: `/companies/admin/${id}`,
+				method: "PATCH",
+				body: company
+			})
 		})
 	}),
 
@@ -63,5 +78,6 @@ export const companyApi = createApi({
 export const { 
 	useGetUserQuery, useGetCompaniesQuery, 
 	useUpdateCompanyMutation, useCreateCompanyMutation, 
-	useGetUsersListQuery, useUpdateUserMutation 
+	useGetUsersListQuery, useUpdateUserMutation, useGetEveryCompaniesQuery,
+	useUpdateAdminCompanyMutation 
 } = companyApi;

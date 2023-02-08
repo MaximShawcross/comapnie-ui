@@ -15,7 +15,7 @@ export const signUpvalidationSchema = yup.object({
 
 export const signInvalidationSchema = yup.object({
 	email: yup.string()
-		.email()
+		.email("write please an email")
 		.required("this field is required"),
 	password: yup.string().required("this field is required")
 })
