@@ -1,7 +1,7 @@
-// import "./sidebar-header.scss"
+import "./sidebar-header.scss"
 
 export const SidebarHeader = () => {
 	return (
-		<h2 className="sidebar__header">Dartsiders CRUD</h2>
+		<h2 className="sidebar__header">Copmnay UI</h2>
 	)
 }

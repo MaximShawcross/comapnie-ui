@@ -40,11 +40,13 @@ export const router = createBrowserRouter([
 	},
 	{
 		path: "/users",
-		element: <UsersPage/>
+		element: <UsersPage/>,
+		loader: checkUserLoggedIn
 	},
 	{
 		path: "/users/edit/:id",
-		element: <UsersEditPage />
+		element: <UsersEditPage />,
+		loader: checkUserLoggedIn,
 	}
 ]);
 
