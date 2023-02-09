@@ -4,7 +4,7 @@ import companiesIcons from '../../resources/icons/building-regular.svg'
 import homeIcon from '../../resources/icons/house-solid.svg'
 import logoutIcon from '../../resources/icons/arrow-right-from-bracket-solid.svg'
 import { NavLink } from "react-router-dom"
-
+import lockIcon from "../../resources/icons/lock-solid.svg"
 import "./sidebar-buttons-list.scss"
 import { useGetUserQuery } from "../../features/company-api.service"
 import { Spinner } from "../spinner/spinner"
@@ -17,7 +17,7 @@ export const SidebarButtonsList = () => {
 	const renderItems = () => {
 		const { roles } = data;
 		const isAdmin = roles.find(role => role === "admin");
-
+		// console.log
 		if ( isAdmin ) {
 			return (
 				<>
@@ -44,7 +44,7 @@ export const SidebarButtonsList = () => {
 							};
 						}}
 					>
-						<SidebarButton name="Companies(adm)" image={userIcon} />
+						<SidebarButton name="Companies(adm)" image={lockIcon} />
 					</NavLink>
 				</>
 			)

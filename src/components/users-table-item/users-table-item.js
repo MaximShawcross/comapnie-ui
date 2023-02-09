@@ -2,7 +2,6 @@ import { useSelector } from "react-redux"
 import { NavLink } from "react-router-dom";
 import { selectById } from "../../features/users/users.slice"
 
-import deleteIcon from "../../resources/icons/trash-can-solid.svg"
 import pencilIcon from "../../resources/icons/pen.png";
 import "./users-table-item.scss";
 

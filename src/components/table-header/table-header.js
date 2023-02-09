@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import bellIcon from '../../resources/icons/bell-regular.svg';
-import plusIcon from "../../resources/icons/plus-solid.svg"
+import plusIcon from "../../resources/icons/plus-solid.svg";
 import "./table-header.scss";
 
 export const TableHeader = () => {

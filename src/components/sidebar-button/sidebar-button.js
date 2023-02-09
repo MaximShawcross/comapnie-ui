@@ -1,4 +1,3 @@
-// import "./sidebar-button.scss";
 
 export const SidebarButton = ({ name, image }) => {
 	return (
