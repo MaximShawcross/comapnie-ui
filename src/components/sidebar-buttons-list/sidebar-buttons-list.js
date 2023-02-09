@@ -20,16 +20,33 @@ export const SidebarButtonsList = () => {
 
 		if ( isAdmin ) {
 			return (
-				<NavLink to="/users"
-					className="button"
-					style={({ isActive, isPending }) => {
-						return {
-							textDecoration: 'none'
-						};
-					}}
-				>
-					<SidebarButton name="Users" image={userIcon} />
-				</NavLink>
+				<>
+					<NavLink to="/users"
+						className="button"
+						style={({ isActive, isPending }) => {
+							return {
+								textDecoration: 'none',
+								background: isActive ? "#A700D0" : "inherit",
+								borderRadius: "4px",
+							};
+						}}
+					>
+						<SidebarButton name="Users" image={userIcon} />
+					</NavLink>
+					
+					<NavLink to="/companies-admin"
+						className="button"
+						style={({ isActive, isPending }) => {
+							return {
+								background: isActive ? "#A700D0" : "inherit",
+								textDecoration: 'none',
+								borderRadius: "4px",
+							};
+						}}
+					>
+						<SidebarButton name="Companies(adm)" image={userIcon} />
+					</NavLink>
+				</>
 			)
 		}
 	}

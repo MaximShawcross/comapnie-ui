@@ -1,15 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-// import { selectById } from "../../features/company/company.slice";
 
 import vectorIcon from '../../resources/icons/Vector.png';
 import pencilIcon from "../../resources/icons/pen.png";
 import "./company-table-item.scss";
-import { selectById } from "../../features/company/company.slice";
+import { selectById } from "../../features/company/admin.company.slice";
 
-export const CompanieTableItem = ({id}) => {
+export const CompanieAdminTableItem = ({id, isAdmin}) => {
 
-	const copanyId = useSelector(state => selectById(state, id)) ;
+	const copanyId = useSelector(state => selectById(state, id));
 
 	const {
 		name, adress,
@@ -27,7 +26,7 @@ export const CompanieTableItem = ({id}) => {
 			<td className="table-content__body__item">{type}</td>
 			<td className="table-content__body__item">
 				{/* <button className="table-content__body__item__button"> */}
-					<NavLink to = {`/companies/edit/${id}`} style = {{display: "flex", justifyContent: "center", alignItems: "center"}}>
+					<NavLink to = {`/companies-admin/edit/${id}`} style = {{display: "flex", justifyContent: "center", alignItems: "center"}}>
 						<img className="table-content__body__item__button__icon__pencil" src= {pencilIcon} alt="pencil"></img>
 					</NavLink>
 				{/* </button> */}

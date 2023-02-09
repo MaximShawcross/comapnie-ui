@@ -8,7 +8,7 @@ import {
 import { useFormik } from "formik";
 import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { userRegisterReset } from "../../features/auth/auth.slice";
 import { registerUser } from '../../features/auth/auth.register';
 import { signUpvalidationSchema } from "../../features/validation.schemas";
@@ -212,9 +212,9 @@ export const SignUpForm = () => {
 						</Button>
 						<Grid container justifyContent="flex-end">
 							<Grid item>
-								<Link href="#" variant="body2">
+								<NavLink to ="/login" style={{textDecoration: "none"}}>
 									Already have an account? Sign in
-								</Link>
+								</NavLink>
 							</Grid>
 						</Grid>
 					</Box>
