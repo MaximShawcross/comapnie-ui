@@ -2,12 +2,8 @@ import squareIcon from '../../resources/icons/square-caret-left-solid.svg';
 import bellIcon from '../../resources/icons/bell-regular.svg';
 
 import "./dashboard-header.scss";
-import { useDispatch } from 'react-redux';
-import { logout } from '../../features/auth/auth.slice';
-import { redirect } from 'react-router-dom';
 
 export const DashboardHeader = () => {
-	const dispatch = useDispatch();
 
 	return (
 		<header className="header">

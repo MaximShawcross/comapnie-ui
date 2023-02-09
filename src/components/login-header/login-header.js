@@ -1,4 +1,3 @@
-// import "./login-header.scss";
 
 export const LoginHeader = () => {
 	return (

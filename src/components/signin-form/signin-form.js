@@ -1,8 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import {
-	Avatar, Box, Button, Container, FormControl,
-	createTheme, CssBaseline, InputLabel,
-	Grid, Link, Typography, Select, MenuItem
+	Avatar, Box, Button, Container, createTheme, CssBaseline, Grid, Typography
 } from "@mui/material";
 
 import { useFormik } from "formik";
@@ -12,7 +10,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { userRegisterReset } from "../../features/auth/auth.slice";
 import { registerUser } from '../../features/auth/auth.register';
 import { signUpvalidationSchema } from "../../features/validation.schemas";
-import { TextInput } from "../text-input/text-input";
 
 import "./signin-form.scss";
 import { LoginTextInput } from "../login-text-input/login-text-input";

@@ -11,7 +11,6 @@ import "./company-create-form.scss";
 const theme = createTheme();
 
 export const CompanyCreateForm = () => {
-	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	const [createCompany, {isSuccess, isError}]= useCreateCompanyMutation();

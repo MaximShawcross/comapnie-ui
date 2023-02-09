@@ -1,4 +1,3 @@
-// import "./sidebar-profile.scss";
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useGetUserQuery } from '../../features/company-api.service';

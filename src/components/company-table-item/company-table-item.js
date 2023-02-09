@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-// import { selectById } from "../../features/company/company.slice";
 
 import vectorIcon from '../../resources/icons/Vector.png';
 import pencilIcon from "../../resources/icons/pen.png";

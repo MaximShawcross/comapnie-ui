@@ -13,7 +13,6 @@ const theme = createTheme();
 
 export const UsersEditForm = () => {
 	const { id } = useParams();
-	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	const user = useSelector(state => selectById(state, id));

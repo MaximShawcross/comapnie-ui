@@ -3,8 +3,8 @@ import { Button, createTheme, CssBaseline, Grid, Typography, Box, Container } fr
 import { useFormik } from 'formik';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { redirect, useNavigate, useParams } from 'react-router-dom';
-import { useUpdateAdminCompanyMutation, useUpdateCompanyMutation } from '../../features/company-api.service';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useUpdateAdminCompanyMutation } from '../../features/company-api.service';
 import { selectById } from '../../features/company/admin.company.slice';
 import { TextInput } from '../text-input/text-input';
 import "./company-edit-form.scss";
