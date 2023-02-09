@@ -1,0 +1,31 @@
+.header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 81.25%;
+	z-index: 2;
+	padding: 11px 51px 11px 30px;
+	background-color: #fff;
+
+	&__container {
+		display: flex;
+		// align-items: center;
+		justify-content: space-between;
+
+		&__item {
+			display: flex;
+			align-items: center;
+
+			&__icon {
+				width: 18px;
+				height: 18px;
+			}
+
+			&__input {
+				margin-right: 30px;
+				border-radius: 4px;
+				padding: 5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+.single-company {
+	width: 79.25%;
+	height: 100vh;
+	// margin: 40px 0 30px 0;
+	margin-top: 130px;
+	margin-left: 20.25%;
+
+	&__item { 
+		margin-top: 10px;
+		&__span {
+			font-size: larger;
+		}
+	}
+}
+.background_grey {
+	background-color:  #E5E5E5;
+
+}
