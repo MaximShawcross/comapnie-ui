@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.eef775cf.css",
-    "main.js": "/static/js/main.f11811a3.js",
-    "static/media/profile.png": "/static/media/profile.19ae9ae348c43ba63735.png",
-    "static/media/building-regular.svg": "/static/media/building-regular.868afaffff71f34c83d3caec2fceb93c.svg",
-    "static/media/bell-regular.svg": "/static/media/bell-regular.839828a386a1aa859f837b0d258eb70e.svg",
-    "static/media/house-solid.svg": "/static/media/house-solid.5763f09abe58c26d976462e6531e4483.svg",
-    "static/media/arrow-right-from-bracket-solid.svg": "/static/media/arrow-right-from-bracket-solid.7e4e1c25cdcfa5a0487f10f39e3f069d.svg",
-    "index.html": "/index.html",
-    "static/media/user-regular.svg": "/static/media/user-regular.dd8c1b813e587d76b797a35e423f1d36.svg",
-    "static/media/square-caret-left-solid.svg": "/static/media/square-caret-left-solid.20573d137562dc21ed8495b77a5e3c4a.svg",
-    "static/media/lock-solid.svg": "/static/media/lock-solid.0e2caa18a7e0c3a5c09dfa84fd3dd729.svg",
-    "static/media/plus-solid.svg": "/static/media/plus-solid.28864b29ad6d5de83a9a39f358f5f654.svg",
-    "main.eef775cf.css.map": "/static/css/main.eef775cf.css.map",
-    "main.f11811a3.js.map": "/static/js/main.f11811a3.js.map"
+    "main.css": "/company-ui/static/css/main.eef775cf.css",
+    "main.js": "/company-ui/static/js/main.24d937e0.js",
+    "static/media/profile.png": "/company-ui/static/media/profile.19ae9ae348c43ba63735.png",
+    "static/media/building-regular.svg": "/company-ui/static/media/building-regular.868afaffff71f34c83d3caec2fceb93c.svg",
+    "static/media/bell-regular.svg": "/company-ui/static/media/bell-regular.839828a386a1aa859f837b0d258eb70e.svg",
+    "index.html": "/company-ui/index.html",
+    "static/media/house-solid.svg": "/company-ui/static/media/house-solid.5763f09abe58c26d976462e6531e4483.svg",
+    "static/media/arrow-right-from-bracket-solid.svg": "/company-ui/static/media/arrow-right-from-bracket-solid.7e4e1c25cdcfa5a0487f10f39e3f069d.svg",
+    "static/media/user-regular.svg": "/company-ui/static/media/user-regular.dd8c1b813e587d76b797a35e423f1d36.svg",
+    "static/media/square-caret-left-solid.svg": "/company-ui/static/media/square-caret-left-solid.20573d137562dc21ed8495b77a5e3c4a.svg",
+    "static/media/lock-solid.svg": "/company-ui/static/media/lock-solid.0e2caa18a7e0c3a5c09dfa84fd3dd729.svg",
+    "static/media/plus-solid.svg": "/company-ui/static/media/plus-solid.28864b29ad6d5de83a9a39f358f5f654.svg",
+    "main.eef775cf.css.map": "/company-ui/static/css/main.eef775cf.css.map",
+    "main.24d937e0.js.map": "/company-ui/static/js/main.24d937e0.js.map"
   },
   "entrypoints": [
     "static/css/main.eef775cf.css",
-    "static/js/main.f11811a3.js"
+    "static/js/main.24d937e0.js"
   ]
 }
